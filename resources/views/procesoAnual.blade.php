@@ -14,10 +14,10 @@ crossorigin="anonymous">
 		
 		<div class="col-md-8">
 
-				<form action="{{ url('/calculoUnicoPuntaje') }}" method="POST">
+				<form action="{{ url('/calculoPuntajeTotal2') }}" method="POST">
 					{{ csrf_field() }}
 					<br><br>
-					<h3 class="text-center"><i class="fas fa-calculator"></i> Cálculo de puntajes únicos por rut: </h3>
+					<h3 class="text-center"><i class="fas fa-calculator"></i> Cálculo de puntajes totales: </h3>
 					<hr>
 					<br>
 					
@@ -28,12 +28,9 @@ crossorigin="anonymous">
 						<option value="2019">2019</option>
 					</select>
 					<br>
-					<label for="">Rut:</label>
-					<input type="text" name="rut" placeholder="Ingrese su rut sin puntos ni guiones" class="form-control" maxlength="9" autocomplete="off" required>
-					<br><br>
-
-					<button class="btn btn-success form-control"><i class="fas fa-calculator"></i> Calcular Puntajes</button>
+					<button class="btn btn-success form-control"><i class="fas fa-calculator"></i> Ejecutar Proceso Anual</button>
 					<hr>
+					
 				</form>
 				<a href=" {{ url('/home') }} "><button class="btn btn-Secondary form-control"><i class="fas fa-home"></i> Volver</button></a>
 

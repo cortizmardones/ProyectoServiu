@@ -22,11 +22,12 @@ use Illuminate\Support\Facades\DB;
 class PostulanteController extends Controller
 {
     
+    //Funcion HOME principal.
 	public function home(){
 		return view('home');
 	}
 
-
+    //Este metodo me llena los SELECT del FORMULARIO y me lleva ahí.
     public function index (){
     	
     	$comunas = Comuna::orderBy('nombre_comuna','asc')->get();
@@ -39,22 +40,7 @@ class PostulanteController extends Controller
         return view('formularioPostulante')->with(compact('comunas','nacionalidades','estado_civil','tipo_cuenta','banco','pueblo_originario','tipo_titulo'));
     }
 
-
-    public function calculoPuntaje (){
-    	return view('calculoPuntaje');
-    }
-
-
-    public function calculoPuntajeTotal (){
-
-        //Aqui tengo que meter todo
-        DB::statement('EXEC sp_serviu3');
-        $proceso = Proceso::all();
-        return view('calculoPuntajeTotal')->with(compact('proceso'));
-
-    }
-
-
+    //Esta función me permite insertar postulante y volver al HOME.
     public function insertarPostulante(Request $request){
         
         //Crear Objeto
@@ -97,8 +83,6 @@ class PostulanteController extends Controller
         
         $postulante->id_cuenta = $request->input('numero_cuenta');
 
-
-
         //Inserción Tabla Domicilio.
         //Paso el primer campo NULO para que se autoincremente
         //$domicilio->id_domicilio = null;
@@ -120,7 +104,6 @@ class PostulanteController extends Controller
         
         //Rescato el campo autoincrementable que se ingresa como PK en domicilio y lo inserto en postulante (Se relaciona el domicilio de esta forma)
         $postulante->id_domicilio = $domicilio->id;
-
 
 
         $postulante->sueldo_liquido = $request->input('sueldo_liquido');
@@ -162,14 +145,19 @@ class PostulanteController extends Controller
             return view('home');
         
         }
-        
-        
        
 
     }
 
+
+    //Esta función me lleva al foirmulario de calculo de puntaje por rut
+    public function calculoPuntaje(){
+        return view('calculoPuntaje');
+    }
+
+
     
-    public function calcularAno(Request $request){
+    public function calcularPuntajeUnico(Request $request){
 
         $ano = $request->input('ano');
         $rut = $request->input('rut');
@@ -197,7 +185,19 @@ class PostulanteController extends Controller
     }
 
 
+    public function calculoPuntajeTotal(){
+        return view('procesoAnual');
+    }
 
 
+
+    public function calculoPuntajeTotal2 (){
+
+        //Aqui tengo que meter todo
+        DB::statement('EXEC sp_serviu3');
+        $proceso = Proceso::all();
+        return view('calculoPuntajeTotal')->with(compact('proceso'));
+
+    }
 
 }
