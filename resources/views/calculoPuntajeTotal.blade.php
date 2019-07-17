@@ -10,9 +10,16 @@ crossorigin="anonymous">
 
 	<div class="row">
 
-		<div class="col-md-2"></div>
 		
-		<div class="col-md-8">
+		<div class="col-md-12">
+
+				<br><br><br>
+				<hr>
+				<h3 class="text-center"><i class="fas fa-align-left"></i> Tabla de resultados: </h3>
+			
+				<br>	
+
+				<br>
 
 				<table class="table">
 					  
@@ -69,7 +76,6 @@ crossorigin="anonymous">
 
 		</div>
 
-		<div class="col-md-2"></div>
 	
 	</div>
 
