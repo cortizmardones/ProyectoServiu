@@ -27,13 +27,14 @@ crossorigin="anonymous">
 				<br>
 				<input type="number" min="0" max="11" class="form-control" autocomplete="off" required>
 				<br>
-				<button class="btn btn-success">Agregar Carga +</button>
+				<button id="botonMostrar" class="btn btn-success">Agregar Carga +</button>
 				<br><br>
 
 				<!--Esta parte debo hacer que aparezca con JQUERY-->
 				<div class="DATOS_CARGA_FAMILIAR">
 					<label>Rut Carga Familiar</label>
-					<input type="number" class="form-control">
+					<br>
+					<input id="rutCarga" type="number" class="form-control">
 					<br>
 					<label>Nombre</label>
 					<br>
@@ -104,3 +105,21 @@ crossorigin="anonymous">
 	</div>
 </div>
 
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+
+	$(document).ready(function(){
+		$('#botonMostrar').click(function(){
+			$('#rutCarga').hide();
+		});
+
+		$('#botonMostrar').click(function(){
+			$('#rutCarga').show();
+		});
+
+	});
+
+
+</script>
