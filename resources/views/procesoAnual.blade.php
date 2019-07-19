@@ -28,7 +28,7 @@ crossorigin="anonymous">
 						<option value="2019">2019</option>
 					</select>
 					<br>
-					<button class="btn btn-success form-control"><i class="fas fa-calculator"></i> Ejecutar Proceso Anual</button>
+					<button class="btn btn-success form-control" onclick="proceso()" ><i class="fas fa-calculator"></i> Ejecutar Proceso Anual</button>
 					<hr>
 					
 				</form>
@@ -41,5 +41,13 @@ crossorigin="anonymous">
 	</div>
 
 </div>
+
+<script>
+	
+	function proceso(){
+		confirm('¿Esta seguro que desea realizar el proceso?');
+	}
+
+</script>
 
 

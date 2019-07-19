@@ -215,6 +215,7 @@ crossorigin="anonymous">
 
 					<a href=" {{ url('/home') }} "><button class="btn btn-Secondary form-control"><i class="fas fa-home"></i> Volver</button></a>
 					<br><br><br>
+				
 		</div>
 
 		<div class="col-md-2"></div>

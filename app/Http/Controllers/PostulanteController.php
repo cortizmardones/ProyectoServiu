@@ -156,7 +156,7 @@ class PostulanteController extends Controller
     }
 
 
-    
+    //Esta función actigva el calculo de puntaje unico por rut
     public function calcularPuntajeUnico(Request $request){
 
         $ano = $request->input('ano');
@@ -185,12 +185,14 @@ class PostulanteController extends Controller
     }
 
 
+
+    //Función que llama el formulario para ejecutar el proceso anual.
     public function calculoPuntajeTotal(){
         return view('procesoAnual');
     }
 
 
-
+    //Función que ejecuta el proceso Anual de calculo de puntaje
     public function calculoPuntajeTotal2 (){
 
         //Aqui tengo que meter todo
@@ -199,5 +201,11 @@ class PostulanteController extends Controller
         return view('calculoPuntajeTotal')->with(compact('proceso'));
 
     }
+
+
+    public function prueba(){
+        return view('formularioPostulante2');
+    }
+
 
 }

@@ -34,3 +34,8 @@ Route::get('/calculoPuntajeTotal', 'PostulanteController@calculoPuntajeTotal');
 Route::post('/calculoPuntajeTotal2', 'PostulanteController@calculoPuntajeTotal2');
 
 
+
+//Pruebas
+Route::get('/home2', 'PostulanteController@prueba');
+
+
