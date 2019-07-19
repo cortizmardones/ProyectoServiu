@@ -2,7 +2,7 @@
 integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
 crossorigin="anonymous">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	
+
 
 <div class="container">
 	<div class="row">
@@ -12,10 +12,10 @@ crossorigin="anonymous">
 			<div class="col-md-8">
 				<br><br>
 				<hr>
-				<label>Fomulario de postulación:</label>
+				<h4>Fomulario de postulación:</h4>
 				<br>
-				<label>Seleccione Fotografia</label>
-				<br><br>
+				<label><i class="fas fa-camera"></i> Seleccione Fotografía: </label>
+				<br>
 				<input type="file" class="form-control">
 				<br><br>
 
@@ -23,32 +23,35 @@ crossorigin="anonymous">
 				<hr>
 				<label>Datos de las cargas familiares</label>
 				<br>
-				<label>Ingrese cantidad de cargas familiares</label>
+				<label><i class="fas fa-users"></i> Ingrese cantidad de cargas familiares</label>
 				<br>
-				<input type="number" min="0" max="11" class="form-control">
+				<input type="number" min="0" max="11" class="form-control" autocomplete="off" required>
 				<br>
 				<button class="btn btn-success">Agregar Carga +</button>
 				<br><br>
 
 				<!--Esta parte debo hacer que aparezca con JQUERY-->
-				<label>Rut Carga Familiar</label>
-				<input type="number" class="form-control">
-				<br>
-				<label>Nombre</label>
-				<br>
-				<input type="text" class="form-control">
-				<br>
+				<div class="DATOS_CARGA_FAMILIAR">
+					<label>Rut Carga Familiar</label>
+					<input type="number" class="form-control">
+					<br>
+					<label>Nombre</label>
+					<br>
+					<input type="text" class="form-control">
+					<br>
 				
-				<label>Tipo Carga</label>
-				<br>
-				<select name="" id="" class="form-control">
-					<option value="">Hijo</option>
-					<option value="">Conyuge</option>
-					<option value="">Nieto</option>
-					<option value="">Otro</option>
-				</select>
-				<br>
+					<label>Tipo Carga</label>
+					<br>
+					<select name="" id="" class="form-control">
+						<option value="">Hijo</option>
+						<option value="">Conyuge</option>
+						<option value="">Nieto</option>
+						<option value="">Otro</option>
+					</select>
+		
+				</div>
 
+				<br>
 				<hr><hr>
 				<label>Datos de la vivienda:</label>
 				<br>
