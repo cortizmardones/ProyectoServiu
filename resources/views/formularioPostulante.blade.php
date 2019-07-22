@@ -215,8 +215,7 @@ crossorigin="anonymous">
 
 					<a href=" {{ url('/home') }} "><button class="btn btn-Secondary form-control"><i class="fas fa-home"></i> Volver</button></a>
 					<br><br><br>
-				
-		</div>
+							</div>
 
 		<div class="col-md-2"></div>
 	
@@ -225,3 +224,64 @@ crossorigin="anonymous">
 </div>
 
 
+<br><br>
+	<label><i class="fas fa-camera"></i> Seleccione Fotografía: </label>
+	<br>
+	<input type="file" class="form-control">
+<br><br>
+
+
+
+<br>
+				<hr>
+				<label><i class="fas fa-home"></i> Datos de la vivienda:</label>
+				<br>
+				<label>Tipo de vivienda</label>
+				<br>
+				<select name="" id="" class="form-control">
+					<option value="">Casa</option>
+					<option value="">Departamento</option>
+				</select>
+				<br>
+
+				<label>Estado</label>
+				<br>
+				<select name="" id="" class="form-control">
+					<option value="">Nueva</option>
+					<option value="">Usada</option>
+				</select>
+				<br>
+				
+				<label>Tramo vivienda: </label>
+				<br>
+				<select name="" id="" class="form-control">
+					<option value="">Tramo 1 - 1.800 UF</option>
+					<option value="">Tramo 2 - 2.400 UF</option>
+					<option value="">Tramo 3 - 2.800 UF</option>
+				</select>
+
+				<br>
+				<label>Región donde se ubica la vivienda</label>
+				<br>
+				<select name="" id="" class="form-control">
+					<option value="">I de Tarapacá (Capital: Iquique)</option>
+					<option value="">II de Antofagasta (Capital: Antofagasta)</option>
+					<option value="">III de Atacama (Capital: Copiapó)</option>
+					<option value="">IV de Coquimbo (Capital: Coquimbo)</option>
+					<option value="">V de Valparaíso (Capital: Valparaíso)</option>
+					<option value="">VI del Libertador General Bernardo O'Higgins (Capital: Rancagua)</option>
+					<option value="">VII del Maule (Capital: Talca)</option>
+					<option value="">VIII de Concepción (Capital: Concepción)</option>
+					<option value="">IX de la Araucanía (Capital: Temuco)</option>
+					<option value="">X de Los Lagos (Capital: Puerto Montt)</option>
+					<option value="">XI de Aysén del General Carlos Ibañez del Campo (Capital: Coyhiaique)</option>
+					<option value="">XII de Magallanes y de la Antártica Chilena (Capital: Punta Arenas)</option>
+					<option value="">Metropolitana de Santiago (Capital:)</option>
+					<option value="">XIV de Los Ríos (Capital: Valdivia)</option>
+					<option value="">XV de Arica y Parinacota (Capital: Arica)</option>
+					<option value="">XVI del Ñuble (Capital: Chillán)</option>
+				</select>
+				<br><br>
+				<button class="btn btn-info form-control">Completar inscripción:</button>
+				<br><br>
+				<hr>

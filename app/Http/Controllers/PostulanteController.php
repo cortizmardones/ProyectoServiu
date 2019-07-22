@@ -203,9 +203,14 @@ class PostulanteController extends Controller
     }
 
 
-    public function prueba(){
-        return view('formularioPostulante2');
+    public function traerPostulantesAsignacion(){
+        $postulantes = Postulante::all();
+        return view('formularioAsignacionCargas')->with(compact('postulantes'));
     }
 
+
+    public function prueba2(){
+        return 'Se enviaron los datos';
+    }
 
 }
