@@ -28,10 +28,11 @@ crossorigin="anonymous">
 				<input type="number" min="0" max="11" class="form-control" autocomplete="off" required>
 				<br>
 				<button id="botonMostrar" class="btn btn-success">Agregar Carga +</button>
+				<button id="botonOcultar" class="btn btn-success">Eliminar Carga +</button>
 				<br><br>
 
 				<!--Esta parte debo hacer que aparezca con JQUERY-->
-				<div class="DATOS_CARGA_FAMILIAR">
+				<div id="DATOS_CARGA_FAMILIAR" hidden="true">
 					<label>Rut Carga Familiar</label>
 					<br>
 					<input id="rutCarga" type="number" class="form-control">
@@ -53,7 +54,8 @@ crossorigin="anonymous">
 				</div>
 
 				<br>
-				<hr><hr>
+				
+				<hr>
 				<label>Datos de la vivienda:</label>
 				<br>
 				<label>Tipo de vivienda</label>
@@ -111,13 +113,19 @@ crossorigin="anonymous">
 <script>
 
 	$(document).ready(function(){
+	
 		$('#botonMostrar').click(function(){
-			$('#rutCarga').hide();
+			//$('#DATOS_CARGA_FAMILIAR').show();
+			$('#DATOS_CARGA_FAMILIAR').attr('hidden',false);
+
 		});
 
-		$('#botonMostrar').click(function(){
-			$('#rutCarga').show();
+		$('#botonOcultar').click(function(){
+			//$('#rutCarga').hide();
+			$('#DATOS_CARGA_FAMILIAR').attr('hidden',true);
 		});
+		
+
 
 	});
 
