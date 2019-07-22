@@ -15,6 +15,7 @@ use App\Proceso;
 use App\Cuenta;
 use App\Domicilio;
 use App\Error;
+use App\Relacion_carga;
 
 
 use Illuminate\Support\Facades\DB;
@@ -204,8 +205,12 @@ class PostulanteController extends Controller
 
 
     public function traerPostulantesAsignacion(){
+
+
+        $tipo_cargas = Relacion_carga::all();
         $postulantes = Postulante::all();
-        return view('formularioAsignacionCargas')->with(compact('postulantes'));
+        
+        return view('formularioAsignacionCargas')->with(compact('postulantes','tipo_cargas'));
     }
 
 

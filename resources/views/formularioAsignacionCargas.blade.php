@@ -17,7 +17,7 @@ crossorigin="anonymous">
 			<form action="{{ url('/home3') }}" method="POST">
 				{{ csrf_field() }}
 
-				<h4>Asignación de cargas familiares:</h4>
+				<h4>Asignación de carga familiares:</h4>
 				<br>
 				<label>Selecciones un rut de postulante: </label>
 				<br>
@@ -51,10 +51,9 @@ crossorigin="anonymous">
 					<br>
 					<select name="" id="" class="form-control" required>
 						<option value="">Selecciones un opción</option>
-						<option value="">Hijo</option>
-						<option value="">Conyuge</option>
-						<option value="">Nieto</option>
-						<option value="">Otro</option>
+						@foreach ($tipo_cargas as $tipo_cargas)
+                    		<option class="text-center" value=" {{ $tipo_cargas->id_relacion }} "> {{ $tipo_cargas->detalle }}</option>
+                		@endforeach	
 					</select>
 		
 				</div>
