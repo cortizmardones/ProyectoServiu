@@ -16,6 +16,7 @@ use App\Cuenta;
 use App\Domicilio;
 use App\Error;
 use App\Relacion_carga;
+use App\Postulante_Carga;
 
 
 use Illuminate\Support\Facades\DB;
@@ -214,8 +215,16 @@ class PostulanteController extends Controller
     }
 
 
-    public function prueba2(){
-        return 'Se enviaron los datos';
+    public function prueba2(Request $request){
+
+        $carga = new Postulante_Carga();
+
+        $carga->rut_postulante = $request->input('rut_postulante');
+        $carga->rut_carga = $request->input('rutCarga');
+        $carga->nombreCarga = $request->input('nombreCarga');
+        $carga->tipoCarga = $request->input('tipo_carga');
+        
+        return 'Se recibieron los siguientes datos: '.$carga->postulante .' '.$carga->rut_carga.' '.$carga->nombreCarga.' '.$carga->tipoCarga;
     }
 
 }

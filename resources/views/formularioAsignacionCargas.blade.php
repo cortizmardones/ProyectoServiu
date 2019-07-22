@@ -17,19 +17,19 @@ crossorigin="anonymous">
 			<form action="{{ url('/home3') }}" method="POST">
 				{{ csrf_field() }}
 
-				<h4>Asignación de carga familiares:</h4>
+				<h4><i class="fas fa-users"></i> Asignación de carga familiares:</h4>
 				<br>
-				<label>Selecciones un rut de postulante: </label>
+				<label><i class="fas fa-user-alt"></i> Selecciones un rut de postulante: </label>
 				<br>
-				<select name="" id="" class="form-control">
+				<select name="rut_postulante" id="rut_postulante" class="form-control text-center">
 						@foreach ($postulantes as $postulantes)
                     		<option class="text-center" value=" {{ $postulantes->rut_postulante }} "> {{ $postulantes->rut_postulante }}</option>
-                		@endforeach	
+                		@endforeach
 				</select>
 				<br>
 
 				<button id="botonMostrar" class="btn btn-primary">Agregar Carga <i class="fas fa-user-plus"></i> </button>
-				<input id="botonOcultar" type="reset" class="btn btn-danger">
+				<input id="botonOcultar" type="reset" class="btn btn-danger" disabled>
 				<!--button id="botonOcultar" class="btn btn-danger" disabled> Eliminar Carga <i class="fas fa-user-minus"></i></button>-->
 				<br>
 
@@ -40,19 +40,19 @@ crossorigin="anonymous">
 					<br>
 					<label>Rut Carga Familiar</label>
 					<br>
-					<input id="rutCarga" type="number" class="form-control" min="1" required>
+					<input id="rutCarga" name="rutCarga" type="number" class="form-control" min="1" required>
 					<br>
 					<label>Nombre</label>
 					<br>
-					<input type="text" class="form-control" required>
+					<input name="nombreCarga" type="text" class="form-control" required>
 					<br>
 				
 					<label>Tipo Carga</label>
 					<br>
-					<select name="" id="" class="form-control" required>
+					<select name="tipo_carga" id="tipo_carga" class="form-control" required>
 						<option value="">Selecciones un opción</option>
 						@foreach ($tipo_cargas as $tipo_cargas)
-                    		<option class="text-center" value=" {{ $tipo_cargas->id_relacion }} "> {{ $tipo_cargas->detalle }}</option>
+                    		<option  class="text-center" value=" {{ $tipo_cargas->id_relacion }} "> {{ $tipo_cargas->detalle }}</option>
                 		@endforeach	
 					</select>
 		
@@ -60,7 +60,7 @@ crossorigin="anonymous">
 				
 				<br>
 				
-				<button class="btn btn-success form-control"><i class="fas fa-user-plus"></i> Registrar Carga Familiar</button>
+				<button id="btn_enviar_formulario" class="btn btn-success form-control" disabled><i class="fas fa-user-plus"></i> Registrar Carga Familiar</button>
 
 		</form>
 
@@ -84,6 +84,7 @@ crossorigin="anonymous">
 			$('#DATOS_CARGA_FAMILIAR').attr('hidden',false);
 			$('#botonOcultar').attr('disabled',false);
 			$('#botonMostrar').attr('disabled',true);
+			$('#btn_enviar_formulario').attr('disabled',false);
 
 		});
 
@@ -91,6 +92,7 @@ crossorigin="anonymous">
 			$('#DATOS_CARGA_FAMILIAR').attr('hidden',true);
 			$('#botonMostrar').attr('disabled',false);
 			$('#botonOcultar').attr('disabled',true);
+			$('#btn_enviar_formulario').attr('disabled',true);
 		});
 		
 

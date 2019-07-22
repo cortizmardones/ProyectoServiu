@@ -17,7 +17,7 @@ crossorigin="anonymous">
 			<hr>
 			<a href=" {{ url('/formularioPostulante') }} "><button class="btn btn-outline-dark form-control"><i class="fas fa-address-card"></i>  Formulario de registro de postulantes</button></a>
 			<br><br>
-			<a href=" {{ url('/asignacionPostulante') }} "><button class="btn btn-outline-dark form-control"><i class="fas fa-users"></i>  Asignación de cargas familiares</button></a>
+			<a href=" {{ url('/asignacionCarga') }} "><button class="btn btn-outline-dark form-control"><i class="fas fa-users"></i>  Asignación de cargas familiares</button></a>
 			<br><br>
 			<a href=" {{ url('/calculoPuntaje') }} "><button class="btn btn-outline-dark form-control"><i class="fas fa-male"></i>  Cálculo de puntaje único por rut</button></a>
 			<br><br>
