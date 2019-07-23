@@ -46,6 +46,14 @@ crossorigin="anonymous">
 					<br>
 					<input name="nombreCarga" type="text" class="form-control" required>
 					<br>
+					<label><i class="fas fa-address-card"></i> Apellido Paterno: </label>
+					<br>
+					<input name="apellidoPaternoCarga" type="text" class="form-control" required>
+					<br>
+					<label><i class="fas fa-address-card"></i> Apellido Materno: </label>
+					<br>
+					<input name="apellidoMaternoCarga" type="text" class="form-control" required>
+					<br>
 				
 					<label><i class="fas fa-baby-carriage"></i> Tipo Carga: </label>
 					<br>

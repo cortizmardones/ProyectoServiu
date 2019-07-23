@@ -17,6 +17,7 @@ use App\Domicilio;
 use App\Error;
 use App\Relacion_carga;
 use App\Postulante_Carga;
+use App\Carga;
 
 
 use Illuminate\Support\Facades\DB;
@@ -217,15 +218,25 @@ class PostulanteController extends Controller
 
     public function prueba2(Request $request){
 
-        $carga = new Postulante_Carga();
+        //Tengo que llenar primero la tabla carga y despues llenar la tabla postulante_carga por las PK
+        $carga = new Carga();
+        $carga->rut_carga_familiar = $request->input('rutCarga');
+        $carga->nombre_carga = $request->input('nombreCarga');
+        $carga->apellido_paterno = $request->input('apellidoPaternoCarga');
+        $carga->apellido_materno = $request->input('apellidoMaternoCarga');
+        $carga->fecha_nacimiento = $request->input('fechaNacimiento');
+        $carga->save();
 
-        $carga->rut_postulante = $request->input('rut_postulante');
-        $carga->rut_carga = $request->input('rutCarga');
-        $carga->nombreCarga = $request->input('nombreCarga');
-        $carga->tipoCarga = $request->input('tipo_carga');
-        $carga->fechaNacimiento = $request->input('fechaNacimiento');
+
+
+        $postulante_carga = new Postulante_Carga();
+        $postulante_carga->rut_postulante = $request->input('rut_postulante');
+        $postulante_carga->rut_carga_familiar = $request->input('rutCarga');
+        $postulante_carga->estado = 1;
+        $postulante_carga->id_relacion = $request->input('tipo_carga');
+        $postulante_carga->save();
         
-        return 'Se recibieron los siguientes datos: '.$carga->postulante .' '.$carga->rut_carga.' '.$carga->nombreCarga.' '.$carga->tipoCarga.' '.$carga->fechaNacimiento1;
+        return view('home');
     }
 
 }
