@@ -37,6 +37,6 @@ Route::post('/calculoPuntajeTotal2', 'PostulanteController@calculoPuntajeTotal2'
 
 //Pruebas
 Route::get('/asignacionCarga', 'PostulanteController@traerPostulantesAsignacion');
-Route::post('/home3', 'PostulanteController@prueba2');
+Route::post('/formularioAsignacionCargas', 'PostulanteController@insertarCargas');
 
 

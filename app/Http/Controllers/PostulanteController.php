@@ -216,7 +216,7 @@ class PostulanteController extends Controller
     }
 
 
-    public function prueba2(Request $request){
+    public function insertarCargas(Request $request){
 
         //Tengo que llenar primero la tabla carga y despues llenar la tabla postulante_carga por las PK
         $carga = new Carga();
@@ -225,18 +225,38 @@ class PostulanteController extends Controller
         $carga->apellido_paterno = $request->input('apellidoPaternoCarga');
         $carga->apellido_materno = $request->input('apellidoMaternoCarga');
         $carga->fecha_nacimiento = $request->input('fechaNacimiento');
-        $carga->save();
-
-
+        
 
         $postulante_carga = new Postulante_Carga();
         $postulante_carga->rut_postulante = $request->input('rut_postulante');
         $postulante_carga->rut_carga_familiar = $request->input('rutCarga');
         $postulante_carga->estado = 1;
         $postulante_carga->id_relacion = $request->input('tipo_carga');
-        $postulante_carga->save();
+       
+
+
+        //Traigo los datos de la BDD para ver compararlos con el formulario y validar que no existan ya previamente.
+        //Ojo que estas variables son ARRAY por eso luego recorro el primer indice
+        $validacionRutCarga = Carga::where('rut_carga_familiar',$request->input('rutCarga'))->get();
+
+        //Me cranie mas que la chucha xD para validar esto.
+        if (!$validacionRutCarga->all() == null  and $validacionRutCarga[0]->rut_carga_familiar == $carga->rut_carga_familiar) {
+
+            $error = Error::where('id_error',4)->get();
+            return view('error')->with(compact('error'));
+         
+        } else {
+
+            $carga->save();
+            $postulante_carga->save();
+            return view('home');
         
-        return view('home');
+        }
+       
+
     }
+
+
+
 
 }

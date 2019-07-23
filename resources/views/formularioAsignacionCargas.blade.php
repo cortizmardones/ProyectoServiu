@@ -14,7 +14,7 @@ crossorigin="anonymous">
 				<br><br>
 				<hr>
 
-			<form action="{{ url('/home3') }}" method="POST">
+			<form action="{{ url('/formularioAsignacionCargas') }}" method="POST">
 				{{ csrf_field() }}
 
 				<h4><i class="fas fa-users"></i> Asignación de carga familiares:</h4>
