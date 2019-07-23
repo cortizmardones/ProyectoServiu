@@ -65,7 +65,7 @@ crossorigin="anonymous">
 					<input type="number" name="edad" min="18" max="60" class="form-control" autocomplete="off" required>
 					<br>
 
-					<label for=""><i class="fas fa-calendar-alt"></i> Fecha de nacimiento</label>
+					<label for=""><i class="fas fa-calendar-alt"></i> Fecha de nacimiento: </label>
 					<br>
 					<input type="date" class="form-control" name="fecha" required>
 					<br>

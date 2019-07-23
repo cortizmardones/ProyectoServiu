@@ -223,8 +223,9 @@ class PostulanteController extends Controller
         $carga->rut_carga = $request->input('rutCarga');
         $carga->nombreCarga = $request->input('nombreCarga');
         $carga->tipoCarga = $request->input('tipo_carga');
+        $carga->fechaNacimiento = $request->input('fechaNacimiento');
         
-        return 'Se recibieron los siguientes datos: '.$carga->postulante .' '.$carga->rut_carga.' '.$carga->nombreCarga.' '.$carga->tipoCarga;
+        return 'Se recibieron los siguientes datos: '.$carga->postulante .' '.$carga->rut_carga.' '.$carga->nombreCarga.' '.$carga->tipoCarga.' '.$carga->fechaNacimiento1;
     }
 
 }

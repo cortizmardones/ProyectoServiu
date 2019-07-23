@@ -38,16 +38,16 @@ crossorigin="anonymous">
 				<!--Esta parte debo hacer que aparezca con JQUERY-->
 				<div id="DATOS_CARGA_FAMILIAR" hidden="true">
 					<br>
-					<label>Rut Carga Familiar</label>
+					<label><i class="fas fa-user-alt"></i>  Rut Carga Familiar</label>
 					<br>
-					<input id="rutCarga" name="rutCarga" type="number" class="form-control" min="1" required>
+					<input id="rutCarga" name="rutCarga" type="text" class="form-control" maxlength="9" required>
 					<br>
-					<label>Nombre</label>
+					<label><i class="fas fa-address-card"></i> Nombre: </label>
 					<br>
 					<input name="nombreCarga" type="text" class="form-control" required>
 					<br>
 				
-					<label>Tipo Carga</label>
+					<label><i class="fas fa-baby-carriage"></i> Tipo Carga: </label>
 					<br>
 					<select name="tipo_carga" id="tipo_carga" class="form-control" required>
 						<option value="">Selecciones un opción</option>
@@ -55,11 +55,14 @@ crossorigin="anonymous">
                     		<option  class="text-center" value=" {{ $tipo_cargas->id_relacion }} "> {{ $tipo_cargas->detalle }}</option>
                 		@endforeach	
 					</select>
-		
+					<br>
+					<label><i class="fas fa-calendar-alt"></i> Fecha de nacimiento: </label>
+					<input type="date" name="fechaNacimiento" class="form-control" required>
+					<br>
 				</div>
 				
-				<br>
-				
+
+				<br><br>
 				<button id="btn_enviar_formulario" class="btn btn-success form-control" disabled><i class="fas fa-user-plus"></i> Registrar Carga Familiar</button>
 
 		</form>
